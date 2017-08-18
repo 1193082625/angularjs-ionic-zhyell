@@ -1,0 +1,77 @@
+@import "common";
+@import "topSearch";
+
+.topSearch{
+  @include top-search("../img/hydqtopbg.jpg", $color656363, 22%);
+}
+
+@mixin block($float){
+  display: block;
+  float: $float;
+}
+
+.jphy{
+  h1{
+    color: #fa8b1d;
+    @extend .font15;
+    line-height: 40px;
+    margin: 0;
+    padding-left: 10px;
+  }
+  a{
+    @include block(left);
+    color: $color333;
+    width: 20%;
+    text-align: center;
+    line-height: 45px;
+  }
+}
+.jphy ul,
+.jrlc ul{
+  @extend .disabl;
+  width: 100%;
+  @extend .mb-10;
+}
+/*other*/
+.jrlc{
+  .title{
+    line-height: $height35;
+    border-bottom: 1px solid #dadada;
+    @extend .disabl;
+    width: 100%;
+
+    span{
+      color: $colorfa8b1d;
+      @extend .font15;
+      padding-left: 10px;
+      @include block(left);
+    }
+    img.lIcon{
+      @include block(left);
+      margin-left: 10px;
+      height: 17px;
+      margin-top: 8px;
+    }
+    img.rIcon{
+      @include block(right);
+      margin-right: 10px;
+      height: 15px;
+      margin-top: 10px;
+    }
+  }
+  ul{
+    a{
+      @include block(left);
+      width: 25%;
+      text-align: center;
+      color: $color666;
+      border-right: 1px solid #d2d2d2;
+      margin-bottom: 5px;
+      margin-top: 5px;
+
+      &:nth-child(4n){
+        border-right: none;
+      }
+    }
+  }
+}

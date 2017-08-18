@@ -1,0 +1,112 @@
+@import "common";
+@import "topSearch";
+
+.topSearch{
+  @include top-search("../img/hydqtopbg.jpg", $color656363, 22%)
+}
+
+@mixin ablock($block, $float){
+  display: $block;
+  float: $float;
+}
+
+.ppzqList{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.ppzqListItem{
+  @extend .disabl;
+  width: 100%;
+  border-bottom: $borderdedede;
+  padding: 10px;
+
+  &:last-child{
+    border-bottom: none;
+  }
+
+  .pImg{
+    width: 80px;
+    @include ablock(block, left);
+
+    img{
+      width: 100%;
+      @extend .disblk;
+    }
+  }
+
+  .row{
+    @include ablock(table, right);
+    width: calc(100% - 90px);
+    padding: 0;
+  }
+}
+.info{
+  width: calc(100% - 90px);
+  @include ablock(block, left);
+  span{
+    font-size: 15px;
+    @extend .disblk;
+    line-height: 30px;
+    color: $color333;
+  }
+  p{
+    color: $color666;
+    margin: 0;
+  }
+}
+.telBtn{
+  @include ablock(block, right);
+  background: #e99130;
+  color: $colorfff;
+  border-radius: 4px;
+  width: 75px;
+  text-align: center;
+  line-height: 28px;
+  margin-top: 15px;
+}
+.telBtn.noPhone{
+  background: #dedede;
+  color: $color666;
+}
+
+.sqSelect{
+  @extend .disabl;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  select{
+    @include ablock(block, left);
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url('../img/xqarrowD1.png') no-repeat scroll 220px center ;
+    border: 1px solid #ffaa01;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    background-size: 18px auto;
+    width: 250px;
+
+    &::-ms-expand {/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+      display: none;
+    }
+  }
+  span{
+    @include ablock(block, right);
+    line-height: 30px;
+    color: $color666;
+    @extend .font15;
+  }
+}
+.no-more-data{
+  background: $colorfff;
+  line-height: 30px;
+  @extend .disblk;
+  text-align: center;
+  padding-bottom: 15px;
+}

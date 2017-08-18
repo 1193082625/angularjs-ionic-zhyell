@@ -1,0 +1,128 @@
+<ion-view view-title="首页">
+  <ion-content scroll="true" class="has-footer">
+   <div class="topSearch">
+     <a class="button button-clear addressHome" href="#/location/{{address.RegionName}}" >
+       <span>{{address.address}}</span>
+       <img src="./img/homeJt1.png" alt="智慧黄页城市" class="go"/>
+     </a>
+     <a ng-if="data.hasSessionId" href="javascript:;" class="quitLoginBtn" ng-click="quitLogin()">退出登录</a>
+     <div class="clearfix"></div>
+     <img class="logoHome" src="./img/hydqLogo.png" alt="logo">
+     <div class="clearfix"></div>
+     <!-- 搜索 -->
+     <a href="#/search/index" class="item item-input searchForm1">
+       <input type="text" placeholder="输入您想要的服务">
+       <span>搜索一下</span>
+     </a>
+     <!-- 搜索 -->
+     <div class="clearfix"></div>
+     <div class="row topClasses pad0">
+       <div class="col pad0">
+         <a href="#/hydq">
+           <img src="./img/hhyIcon1.png" alt="114黄页">
+           <span>114黄页</span>
+         </a>
+       </div>
+       <div class="col pad0">
+         <a href="http://www.wolive114.com/index.php?g=Release&c=Waps">
+           <img src="./img/hshIcon1.png" alt="114生活">
+           <span>114生活</span>
+         </a>
+       </div>
+       <div class="col pad0">
+         <a href="http://shop.zhyell.com/mobile/">
+           <img src="./img/hgwIcon1.png" alt="114购物">
+           <span>114购物</span>
+         </a>
+       </div>
+     </div>
+   </div>
+    <!--黄页-->
+    <div class="homeItem">
+      <div class="title colorf59525">
+        <div>
+          <ul>
+            <img  src="./img/homeJt2.png" alt="">
+            <strong>114黄页</strong>
+            <span>- 城市黄页 尽在114</span>
+          </ul>
+        </div>
+      </div>
+      <div class="row pad0 hyView">
+        <div class="col pad0">
+          <a href="#/zmqy" class="pad-b-1">
+            <img src="./img/nhomeI1.png" alt="知名企业"/>
+          </a>
+        </div>
+        <div class="col pad0 flex15">
+          <a href="#/ppzq">
+            <img src="./img/nhomeI2.png" alt="品牌专区"/>
+          </a>
+          <a href="#/jphy">
+            <img src="./img/nhomeI3.png" alt="金牌行业"/>
+          </a>
+        </div>
+        <div class="col pad0">
+          <a href="#/classify" class="pad-b-1">
+            <img src="./img/nhomeI4.png" alt="黄页分类"/>
+          </a>
+        </div>
+      </div>
+      <img class="homeItemBanner" src="./img/homebanner1.jpg" alt="banner1">
+    </div>
+    <!--114生活-->
+    <div class="homeItem">
+      <div class="title color3b98f7">
+        <div>
+          <ul>
+            <img  src="./img/homeJt3.png" alt="">
+            <strong>114生活</strong>
+            <span>- 品味生活 爱在114</span>
+          </ul>
+        </div>
+      </div>
+      <div class="sh">
+        <a href="http://www.wolive114.com/index.php?g=Release&c=waps&a=category">
+          <img src="./img/114shImg1.png" alt="生活分类"/>
+        </a>
+        <a href="http://www.wolive114.com/index.php?g=Release&c=waps&a=nearAreas">
+          <img src="./img/114shImg2.png" alt="附近商家"/>
+        </a>
+        <a href="javascript:;">
+          <img src="./img/114shImg3.png" alt="推荐商户"/>
+        </a>
+        <a href="http://www.wolive114.com/index.php?g=Release&c=Waps&a=lists&key=">
+          <img src="./img/114shImg4.png" alt="热门信息"/>
+        </a>
+      </div>
+      <img class="homeItemBanner" src="./img/homebanner2.jpg" alt="banner1">
+    </div>
+    <!--购物-->
+    <div class="homeItem">
+      <div class="title">
+        <div>
+          <ul>
+            <img  src="./img/homeJt1.png" alt="">
+            <strong>114购物</strong>
+            <span>- 特色购物 就在114</span>
+          </ul>
+        </div>
+      </div>
+      <div class="gw">
+        <a href="http://shop.zhyell.com/mobile/index.php?m=category">
+          <img src="./img/114gwImg1.png" alt="产品分类"/>
+        </a>
+        <a href="http://shop.zhyell.com/mobile/index.php?m=groupbuy">
+          <img src="./img/114gwImg2.png" alt="热门团购"/>
+        </a>
+        <a href="http://shop.zhyell.com/mobile/index.php?m=store">
+          <img src="./img/114gwImg3.png" alt="店铺街"/>
+        </a>
+        <a href="http://shop.zhyell.com/mobile/index.php?m=activity">
+          <img src="./img/114gwImg4.png" alt="促销活动"/>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+  <div ng-include="'./templates/common/footer.html'"></div>
+</ion-view>

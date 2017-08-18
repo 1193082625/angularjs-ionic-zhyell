@@ -1,0 +1,21 @@
+$colorfff: #fff;
+$colore7e7e7: #e7e7e7;
+$height: 60px;
+
+.homefootBar{
+  background: $colorfff;
+  box-shadow: 0 -3px 0 $colore7e7e7;
+  height: $height;
+  box-shadow: 0px -1px 10px $colore7e7e7;
+}
+.homefootBar .tabs{
+  height: $height;
+  border: none;
+  background: none;
+  padding-top: 10px;
+}
+.homefootBar img {
+  display: block;
+  height: 22px;
+  margin: 0 auto 6px;
+}

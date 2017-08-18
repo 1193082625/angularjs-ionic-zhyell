@@ -1,0 +1,137 @@
+@import "common";
+@import "topSearch";
+
+.bgfff{
+  background: $colorfff;
+}
+.backgroundf3f3f3{
+  background: $colorf3f3f3;
+}
+.topSearch{
+  @include top-search("../img/hydqtopbg.jpg", $color656363, 22%);
+}
+
+.somposREL{
+  position: relative;
+
+  .leftSection{
+    left: 0;
+    top:14%;
+    width: 100%;
+  }
+  .rightSection{
+    left: 0;
+    top:50%;
+    margin-top: -20px;
+    width: 65%;
+  }
+}
+.borderbtm{
+  border-bottom: $borderdedede;
+}
+.someClasses{
+  border-top:$borderdedede;
+  border-bottom: $borderdedede;
+  section{
+    @extend .disblk;
+    position: absolute;
+    text-align: center;
+    @extend .font13;
+  }
+  strong{
+    @extend .disblk;
+    color: $colorfa8b1d;
+    font-weight: 500;
+    font-family:'cyjzhongyc64c9de48166d1';
+    @extend .font14;
+  }
+  span{
+    display: block;
+    color: $color999;
+    font-family:'cyjzhongyc64c9de48166d1';
+  }
+  img{
+    @extend .disblk;
+    @extend .magcenter;
+  }
+}
+.someClasses>.col:first-child{
+  border-right: $borderdedede;
+}
+
+/*金牌行业*/
+.jphy h1{
+  color: $colorfa8b1d;
+  @extend .font15;
+  line-height: 40px;
+  margin: 0;
+  @extend .pl-10;
+}
+.jphy ul,
+.jrlc ul{
+  @extend .disabl;
+  width: 100%;
+  @extend .mb-10;
+}
+.jphy a{
+  @extend .fl;
+  @extend .disblk;
+  color: $color333;
+  width: 20%;
+  text-align: center;
+  line-height: 45px;
+  @extend .font13;
+}
+
+/*other*/
+.jrlc{
+
+  .title{
+    line-height: $height35;
+    border-bottom: 1px solid #dadada;
+    @extend .disabl;
+    width: 100%;
+
+    span{
+      color: $colorfa8b1d;
+      @extend .font15;
+      @extend .pl-10;
+      @extend .fl;
+      @extend .disblk;
+    }
+
+    img.lIcon{
+      @extend .fl;
+      margin-left: 10px;
+      height: 17px;
+      @extend .disblk;
+      margin-top: 8px;
+    }
+
+    img.rIcon{
+      @extend .fr;
+      @extend .mr-10;
+      height: 15px;
+      @extend .disblk;
+      margin-top: 10px;
+    }
+  }
+
+  ul{
+    a{
+      @extend .disblk;
+      width: 25%;
+      text-align: center;
+      color: #666;
+      border-right: 1px solid #d2d2d2;
+      @extend .fl;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      @extend .font13;
+
+      &:nth-child(4n){
+        border-right: none;
+      }
+    }
+  }
+}

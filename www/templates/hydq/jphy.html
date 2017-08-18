@@ -1,0 +1,30 @@
+<ion-view view-title="金牌行业">
+  <ion-content class="has-footer bgf3f3f3">
+    <div ng-include="'./templates/hydq/top-search.html'"></div>
+    <div class="clearfix"></div>
+    <!--金牌行业-->
+    <div class="jphy">
+      <h1 class="jphyTitle">金牌行业</h1>
+      <div class="clearfix"></div>
+      <ul class="bgfff">
+        <a ng-repeat="jphy in data.jphyList" ng-click="goItems(jphy.id)" href="javascript:;">{{jphy.name}}</a>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <!--金融理财-->
+    <div ng-repeat="jphyView in data.jphyList" id="jphy{{jphyView.id}}" class="jrlc bgfff">
+      <a class="title" href="javascript:;" ng-click="goNext(jphyView.code,jphyView.name)">
+        <img class="lIcon" src="./img/jphyIcon.png" alt="金牌行业">
+        <span>{{jphyView.name}}</span>
+        <img class="rIcon" src="./img/leftgoBtn.png" alt="详情">
+      </a>
+      <div class="clearfix"></div>
+      <ul>
+        <a ng-repeat="jphyItems in jphyView.children" href="#/Mlist/{{jphyItems.code}}/{{jphyView.name}}-{{jphyItems.name | SpritFilter}}">
+          {{jphyItems.name}}
+        </a>
+      </ul>
+    </div>
+  </ion-content>
+  <div ng-include="'./templates/common/footer.html'"></div>
+</ion-view>

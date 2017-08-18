@@ -1,0 +1,72 @@
+@import "common";
+@import "topSearch";
+
+.topSearch{
+  @include top-search("../img/hydqtopbg.jpg", $color656363, 22%);
+}
+
+.ListView{
+  @extend .disabl;
+  width: 100%;
+  margin-top: 10px;
+  border-top: $borderdedede;
+  a{
+    display: block;
+    float: left;
+    width: 50%;
+    border-bottom: $borderdedede;
+    padding-top: 15px;
+    &:nth-child(2n){
+      border-left: $borderdedede;
+    }
+  }
+  img{
+    @extend .disblk;
+    @extend .magcenter;
+    max-width: 80%;
+  }
+  strong{
+    color:$color666;
+    font-weight: normal;
+    line-height: $height35;
+    font-size: 17px;
+    @extend .disblk;
+    width: 80%;
+    @extend .magcenter;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+  }
+  span{
+    color: $color666;
+    text-align: center;
+    @extend .font15;
+    line-height: $height35;
+    @extend .disblk;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+    @extend .magcenter;
+  }
+}
+
+.zmqyList{
+  a{
+    @extend .disblk;
+    width: 100%;
+    border-bottom: $borderdedede;
+    @extend .pt-10;
+    padding-bottom: 10px;
+  }
+  img{
+    @extend .disblk;
+    width: 100%;
+  }
+  span{
+    @extend .disblk;
+    line-height: 30px;
+    color: $color666;
+    text-align: center;
+  }
+}

@@ -1,0 +1,27 @@
+.itemsList{
+  margin-bottom:10px;
+  @extend .disabl;
+  width: 100%;
+  top:60px;
+  height: calc(100% - 80px);
+  li{
+    color: #323232;
+    @extend .fl;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: 20%;
+    a{
+      color: $color333;
+      cursor:pointer;
+      clear:none;
+      line-height:35px;
+      @extend .disblk;
+      text-align:center;
+      @extend .font14;
+    }
+    a.catch{
+      background:#BD9B33!important;
+    }
+  }
+}

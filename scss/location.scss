@@ -1,0 +1,51 @@
+@import "common";
+
+@mixin aStyle{
+  color: $color323232;
+  @extend .fl;
+  line-height: 40px;
+  text-align: center;
+  width: calc(100% / 3);
+  @extend .overflow;
+}
+
+.bgf0efef{
+  background: $colorf0efef;
+}
+
+.locationlist h3,
+.cityItems h3{
+  font-size: 17px;
+  margin: 20px 15px;
+  font-family: "微软雅黑";
+}
+.locationlist{
+  background: $colorfff;
+  @extend .disabl;
+  width: 100%;
+  ul{
+    border-top: $borderededed;
+  }
+  a{
+    border-bottom: $borderededed;
+    border-right: $borderededed;
+    @include aStyle;
+  }
+  a.curRegion {
+    background: #ffaa01;
+    color: $colorfff;
+  }
+}
+.cityItems{
+  background: $colorfff;
+  @extend .disabl;
+  width: 100%;
+  ul{
+    @extend .disabl;
+    width:100%;
+    border-top:1px solid #707070;
+  }
+  a{
+    @include aStyle;
+  }
+}

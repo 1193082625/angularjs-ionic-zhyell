@@ -1,0 +1,18 @@
+@import "common";
+@import "allClassify";
+
+.itemsList{
+  margin-top: 10px;
+  li a{
+    clear:none;
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-size:40px 40px;
+    line-height:20px;
+    padding-top:45px;
+    @extend .disblk;
+    text-align:center;
+    @extend .font14;
+    height: 85px;
+  }
+}

@@ -1,0 +1,21 @@
+<ion-view view-title="品牌专区">
+  <ion-content scroll="true" class="has-footer bgf3f3f3">
+    <div ng-include="'./templates/hydq/top-search.html'"></div>
+    <div class="clearfix"></div>
+    <div class="areaList">
+      <a ng-repeat="areaItem in data.areaList" href="javascript:;" ng-click="getList(areaItem.code)">{{areaItem.title}}</a>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row ListView bgfff pad0 minh" ng-if="data.dataTips">
+      <span class="Tips">{{data.dataTips}}</span>
+    </div>
+    <div class="row ListView bgfff pad0" ng-if="data.dataList">
+      <a ng-repeat="item in data.dataList" href="#/ppzqList/{{item.id}}/{{item.regionCode}}">
+        <img style="height: 134px;" ng-src="{{item.imgUrl}}" alt="{{item.name}}">
+        <strong>{{item.name}}</strong>
+        <!--<span>生活服务 , 应有尽有</span>-->
+      </a>
+    </div>
+  </ion-content>
+  <div ng-include="'./templates/common/footer.html'"></div>
+</ion-view>

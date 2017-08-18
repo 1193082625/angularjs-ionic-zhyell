@@ -1,0 +1,88 @@
+@import "common";
+@import "topSearch";
+
+@mixin block($block,$float){
+  display: $block;
+  float: $float;
+}
+
+.minh{
+  min-height: 300px
+}
+.topSearch{
+  @include top-search("../img/hydqtopbg.jpg", $color656363, 22%);
+}
+.areaList{
+  @extend .disabl;
+  width: 100%;
+  @extend .bgfff;
+  padding: 20px 5px 10px;
+
+  a{
+    @include block(block, left);
+    line-height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    border: $borderdedede;
+    border-radius: 4px;
+    color: #333;
+  }
+}
+
+.Tips{
+  @extend .disblk;
+  line-height: $height35;
+  text-align: center;
+  color: $color666;
+  margin-top: 20px;
+}
+
+
+.ListView{
+  @extend .disabl;
+  width: 100%;
+  margin-top: 10px;
+  border-top: $borderdedede;
+
+  a{
+    @include block(block, left);
+    width: 50%;
+    border-bottom: $borderdedede;
+    padding-top: 15px;
+    &:nth-child(2n){
+      border-left: $borderdedede;
+    }
+  }
+  img{
+    @extend .disblk;
+    @extend .magcenter;
+    max-width: 80%;
+  }
+  strong{
+    color: $color666;
+    font-weight: normal;
+    line-height: $height35;
+    font-size: 17px;
+    @extend .disblk;
+    width: 80%;
+    @extend .magcenter;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+  }
+  span{
+    color: $color666;
+    @extend .disblk;
+    text-align: center;
+    @extend .font15;
+    line-height: $height35;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+    @extend .magcenter;
+  }
+}

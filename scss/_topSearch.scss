@@ -1,0 +1,136 @@
+@mixin address {
+  line-height: $height28;
+  min-height: $height28;
+  @extend .disabl;
+
+  span{
+    color: $color000;
+  }
+
+  .icon{
+    height: 20px;
+    margin-top: 4px;
+    @extend .mr-10;
+  }
+  .go{
+    margin-left: 8px;
+  }
+}
+
+@mixin commonSerachForm {
+  @extend .pad0;
+  background: $colorfff;
+  border-radius: 5px;
+  height: $height35;
+  width: 80%;
+  margin-left: 10%;
+  position: relative;
+  margin-bottom: 20px;
+  input{
+    padding-right: 0px;
+    padding-top: 0;
+    @extend .fl;
+    @extend .disblk;
+    height: $height35;
+    line-height: $height35;
+  }
+}
+@mixin logo {
+  @extend .disblk;
+  max-height: 75px;
+}
+
+@mixin top-search($imgurl, $color, $percent) {
+  background: url($imgurl) no-repeat center top;
+  background-size: cover;
+  padding-top: 15px;
+  @extend .mb-10;
+
+  /*切换地址*/
+  .addressHydq{
+    @include address;
+    @extend .magcenter;
+    .go{
+      height: 8px;
+    }
+  }
+  /*切换地址*/
+  .addressHome{
+    @include address;
+    @extend .ml-20;
+    @extend .fl;
+    .go{
+      height: 10px;
+    }
+  }
+  .quitLoginBtn{
+    @extend .disblk;
+    @extend .fr;
+    line-height: $height28;
+    @extend .mr-20;
+  }
+
+  .logoHydq{
+    @include logo;
+    max-width: 200px;
+    margin: 10px auto;
+  }
+  .logoHome{
+    @include logo;
+    max-width: 260px;
+    margin: 10px auto 20px;
+  }
+
+  /*首页搜索*/
+  .searchForm1{
+    @include commonSerachForm;
+    border: $bordera8a8a8;
+    input{
+      @extend .pl-20;
+      width: calc(100% - 80px);
+    }
+
+    span{
+      @extend .disblk;
+      @extend .fr;
+      width: 80px;
+      text-align: center;
+      background: $color745e47;
+      color: $colorfff;
+      line-height: $height35;
+      @extend .font14;
+    }
+  }
+  /*黄页大全搜索*/
+  .searchForm{
+    @include commonSerachForm;
+    border: 1px solid #ff9125;
+    margin-top: 10px;
+    input{
+      padding-left: 80px;
+      font-size: 14px;
+      width: 100%;
+    }
+    img{
+      @extend .disblk;
+      position: absolute;
+      left: 40px;
+      top: 8px;
+      height: 18px;
+    }
+  }
+  .topClasses {
+    span{
+      text-align: center;
+      line-height: 40px;
+      @extend .disblk;
+      color: $color;
+      font-family: "微软雅黑";
+    }
+    img{
+      width: $percent;
+      @extend .disblk;
+      @extend .magcenter;
+    }
+  }
+}

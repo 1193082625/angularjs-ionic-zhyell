@@ -1,0 +1,153 @@
+@import "common";
+@import "allClassify";
+
+@mixin block($float){
+  @extend .disblk;
+  float: $float;
+}
+
+.bgfff{
+  background: $colorfff;
+  @extend .disabl;
+  width: 100%;
+}
+.bgf3f3f3{
+  background: $colorf3f3f3;
+}
+.bar.searchTop{
+  overflow: visible;
+  background-image:none;
+  border-bottom: 1px solid #e6e6e6;
+}
+.gobackBtn{
+  @include block(left);
+  margin-right: 15px;
+  margin-left: 15px;
+  color: #666;
+  line-height: 30px;
+  @extend .font16;
+}
+.searchBox{
+  padding: 0;
+  border: 0px none;
+  height: 30px;
+  padding-left: 5px;
+  width: 100%;
+  border-radius: 5px;
+  @extend .fl;
+}
+.searchInput{
+  @extend .pad0;
+  background: none;
+  height: $height28;
+  margin-top: 1px;
+  overflow: inherit;
+  background: #f3f3f3;
+  border: 1px solid #ff9125;
+  border-radius: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  input{
+    padding-right: 0px;
+    @extend .font14;
+    line-height: $height28;
+    height: $height28;
+    padding-top: 0;
+    width: calc(100% - 102px);
+    @extend .fl;
+  }
+}
+.searchInput>div{
+  @include block(left);
+  position: relative;
+  color: #3b4043;
+  line-height: $height28;
+  padding-right: 10px;
+  .choosetitle{
+    position: relative;
+    padding-right: 10px;
+    img{
+      height: 8px;
+      position: absolute;
+      right: 0;
+      bottom: 5px;
+    }
+  }
+}
+.chooseItems{
+  background: #606060;
+  position: absolute;
+  top: $height28;
+  left: 0;
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  li{
+    @extend .disblk;
+    line-height: 30px;
+    border-bottom: 1px solid #707070;
+    color: $colorfff;
+    text-align: center;
+    font-size: 13px;
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+}
+.goSearch{
+  @include block(right);
+  img{
+    @extend .disblk;
+    height: 18px;
+    margin-top: 4px;
+  }
+}
+
+.BoxItems>{
+  position: absolute;
+  left: 0;
+  top:44px;
+  width: 100%;
+  div{
+    margin-top: 10px;
+  }
+}
+.searchBoxTitle{
+  @extend .font16;
+  font-weight: 500;
+  line-height: 50px;
+  color: $color333;
+  @extend .disabl;
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  span{
+    @include block(left);
+  }
+  .del{
+    @include block(right);
+    height: 20px;
+    margin-top: 15px;
+  }
+}
+.historyBox{
+  @extend .disabl;
+  li{
+    @include block(left);
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    a{
+      @include block(left);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #666;
+    }
+  }
+}
+
+.notouch{
+  opacity: 0.5;
+}
+

@@ -1,0 +1,16 @@
+<ion-view view-title="全部分类">
+  <ion-header-bar class="bar-energized">
+    <div class="buttons">
+      <button class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></button>
+    </div>
+    <h1 class="title">选择地区</h1>
+    <a href="#/home" class="button button-icon icon ion-ios-home-outline"></a>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <ul class="itemsList page100list top8">
+      <li ng-repeat="classItem in data.shortLists" ng-if="classItem.img_url_two.length > 0">
+        <a ng-click="goNext(classItem.code,classItem.name)" data-id="{{classItem.id}}" candrag="1" style="background-image:url('{{classItem.img_url_two}}')">{{classItem.name}}</a>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>

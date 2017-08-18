@@ -1,0 +1,20 @@
+<ion-view view-title="知名企业">
+  <ion-content scroll="true" class="has-footer bgf3f3f3">
+    <div ng-include="'./templates/hydq/top-search.html'"></div>
+    <div class="clearfix"></div>
+    <div class="zmqyList bgfff pad0">
+      <a ng-repeat="item in data.dataList" href="#/Mdetails/{{item.merchantId}}">
+        <img ng-src="{{item.qiyeLogo}}" alt="{{item.merchantName}}">
+        <span>{{item.merchantName}}</span>
+      </a>
+    </div>
+    <div class="clearfix"></div>
+    <div class="ListView bgfff pad0">
+      <a ng-repeat="otheritem in data.otherList" href="#/Mdetails/{{otheritem.merchantId}}">
+        <img style="height: 120px;" ng-src="{{otheritem.qiyeLogo}}" alt="{{otheritem.merchantName}}">
+        <span>{{otheritem.merchantName}}</span>
+      </a>
+    </div>
+  </ion-content>
+  <div ng-include="'./templates/common/footer.html'"></div>
+</ion-view>

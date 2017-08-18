@@ -1,0 +1,116 @@
+@import"common";
+@import "topSearch";
+
+.topSearch{
+  @include top-search("../img/hydqtopbg1.png", $color745e47, 25%);
+}
+
+.hyView{
+  border-top: $borderddd;
+  border-left: $borderddd;
+}
+
+.homeItemBanner{
+  margin-top: 15px;
+}
+.homeItem{
+  img, a{
+    @extend .disblk;
+  }
+  .title{
+    width: 100%;
+    @extend .disabl;
+    color: $color333;
+    padding: 15px;
+    &::before,
+    &::after{
+      content: '';
+      width: 15%;
+      height: 1px;
+      @extend .disblk;
+      @extend .fl;
+      background: #d0d0d0;
+      margin-top: 10px;
+    }
+
+    div{
+      width: 70%;
+      @extend .disabl;
+      @extend .fl;
+    }
+    ul{
+      @extend .disabl;
+      @extend .magcenter;
+    }
+    img{
+      height: 14px;
+      @extend .disblk;
+      @extend .fl;
+      margin-top: 4px;
+      margin-right: 10px;
+    }
+    strong{
+      font-weight: normal;
+      font-size: 16px;
+    }
+  }
+
+  .title.colorf59525{
+    color: $colorf59525;
+    &::before,
+    &::after{
+      background: $colorf59525;
+    }
+  }
+  .title.color3b98f7{
+    color: $color3b98f7;
+    &::before,
+    &::after{
+      background: $color3b98f7;
+    }
+  }
+  a{
+     border-right: $borderddd;
+     border-bottom: $borderddd;
+  }
+}
+
+.sh{
+  border-top: $borderddd;
+  border-left: $borderddd;
+  @extend .disabl;
+  width: 100%;
+  a{
+    @extend .disblk;
+    width: 50%;
+    @extend .fl;
+    border-right: $borderddd;
+    border-bottom: $borderddd;
+  }
+}
+.gw{
+  padding: 5px;
+  @extend .disabl;
+  width: 100%;
+
+  a{
+    @extend .disblk;
+    width: 50%;
+    @extend .fl;
+    margin-bottom: 5px;
+    border: none;
+
+    &:nth-child(n){
+      padding-right: 2px;
+    }
+    &:nth-child(2n){
+      padding-left: 2px;
+      padding-right: 0;
+    }
+  }
+}
+.sh a img,
+.gw a a{
+  @extend .disblk;
+  width: 100%;
+}

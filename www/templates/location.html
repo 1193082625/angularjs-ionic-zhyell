@@ -1,0 +1,34 @@
+<ion-view view-title="选择地区" class="bgf0efef">
+  <ion-header-bar class="bar-energized">
+    <div class="buttons">
+      <button class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></button>
+    </div>
+    <h1 class="title">选择地区</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="locationlist" ng-if="data.curCity!=null">
+      <h3>{{data.curCityTitle}}</h3>
+      <ul ng-if="data.curCity.length > 0">
+        <li ng-repeat="myCurCity in data.curCity">
+          <a href="javascript:void(0);"  ng-class="{true:'curRegion', false:''}[data.viewCityTitle==myCurCity.name]" ng-click="getViewCity(myCurCity)">{{myCurCity.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="cityItems" ng-if="data.viewCity!=null">
+      <h3>{{data.viewCityTitleZH}}</h3>
+      <ul ng-if="data.viewCity.length > 0">
+        <li ng-repeat="myViewCity in data.viewCity">
+          <a href="javascript:void(0);" ng-click="changeCity(myViewCity)">{{myViewCity.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="locationlist mt-5">
+      <!--<h3>中国行政区域</h3>-->
+      <ul>
+        <li ng-repeat="myProvinceList in data.ProvinceList track by $index">
+          <a ng-click="getCurCity(myProvinceList)"  ng-class="{true:'curRegion', false:''}[(data.curCityTitle==myProvinceList.title) || (data.viewCityTitle==myProvinceList.title)]" href="javascript:void(0);">{{myProvinceList.title}}</a>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,56 @@
+<ion-view view-title="搜索">
+  <ion-header-bar class="bar-stable searchTop">
+    <div class="row searchBox">
+      <!-- 搜索 -->
+      <div class="item item-input col searchInput">
+        <div ng-if="data.showChooseItem">
+          <div ng-click="data.showItems = !data.showItems" class="choosetitle">
+            <span>{{data.searchValue}}</span>
+            <img src="./img/showIcon.png" alt="选择">
+          </div>
+          <ul class="chooseItems" ng-show="data.showItems">
+            <li ng-click="setSearchTab('a','114黄页')">114黄页</li>
+            <li ng-click="setSearchTab('b','114生活')">114生活</li>
+            <li ng-click="setSearchTab('c','114购物')">114购物</li>
+          </ul>
+        </div>
+        <input type="text" placeholder="搜索" ng-model="data.contentKeywords">
+        <a ng-click="searchContent()" class="goSearch">
+          <img src="./img/homesearchIcon1.png" alt="搜索">
+        </a>
+      </div>
+      <!-- 搜索 -->
+      <a ng-click="goback()" class="gobackBtn">取消</a>
+    </div>
+  </ion-header-bar>
+  <ion-content class="bgf3f3f3">
+    <div class="BoxItems">
+      <div ng-if="data.historyArray.length > 0" class="historyBox bgfff">
+        <div class="searchBoxTitle">
+          <span>历史搜索</span>
+          <img ng-click="clearHistory()" class="del" src="./img/delIcon.png" alt="删除">
+        </div>
+        <div class="clearfix"></div>
+        <div>
+          <li ng-if="data.historyArray" ng-repeat="item in data.historyArray track by $index">
+            <a ng-if="item.name != ''" href="javascript:;" ng-click="searchContent1(item.val,item.name)">
+              {{item.name}}
+            </a>
+            </a>
+          </li>
+        </div>
+      </div>
+      <div class="bgfff pt-10">
+        <div class="searchBoxTitle">
+          <span>分类</span>
+        </div>
+        <div class="clearfix"></div>
+        <ul class="itemsList page100list top8">
+          <li ng-repeat="classItem in data.shortLists" ng-if="classItem.img_url_two.length > 0">
+            <a ng-click="goNext(classItem.code,classItem.name)" data-id="{{classItem.id}}" candrag="1">{{classItem.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

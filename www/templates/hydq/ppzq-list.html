@@ -1,0 +1,33 @@
+<ion-view view-title="商圈列表">
+  <ion-content class="has-footer bgf3f3f3">
+    <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+    <div ng-include="'./templates/hydq/top-search.html'"></div>
+
+    <div class="clearfix"></div>
+    <div class="sqSelect bgfff pad0">
+      <select name="" id="" ng-change="sqChanged(data.selectedSQ)" ng-model="data.selectedSQ" data-tap-disabled=”true”>
+        <option ng-repeat="sqItem in data.sqList" value="{{sqItem.id}}" ng-selected="sqItem.id == data.businessId">{{sqItem.name}}</option>
+      </select>
+      <span>共{{data.itemLength}}条</span>
+    </div>
+    <div class="clearfix"></div>
+    <div class="ppzqList bgfff pad0">
+      <div class="ppzqListItem" ng-repeat="view in data.dataList">
+        <a class="pImg" href="/Mdetails/{{view.id}}">
+          <img src="{{view.imgUrl}}" alt="{{view.name}}">
+        </a>
+        <div class="row">
+          <a href="#/Mdetails/{{view.id}}" class="info">
+            <span>{{view.name}}</span>
+            <p>{{view.address}}</p>
+          </a>
+          <a class="telBtn" ng-if="view.phone" href="tel:{{view.phone}}">电话联系</a>
+          <a class="telBtn noPhone" ng-if="!view.phone" href="javascript:alert('没有电话');">电话联系</a>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll ng-if="data.hasmore" on-infinite="loadMore()" distance="1%">...</ion-infinite-scroll>
+    <div ng-if="!data.hasmore" class="no-more-data">没有更多数据了</div>
+  </ion-content>
+  <div ng-include="'./templates/common/footer.html'"></div>
+</ion-view>

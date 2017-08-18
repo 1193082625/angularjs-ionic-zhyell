@@ -1,0 +1,70 @@
+<ion-view view-title="黄页大全">
+  <ion-content scroll="true" class="has-footer backgroundf3f3f3">
+    <div ng-include="'./templates/hydq/top-search.html'"></div>
+    <div class="row someClasses bgfff pad0">
+      <div class="col somposREL pad0 w1">
+        <a href="#/mclassify/19/数码家电">
+          <section class="leftSection">
+            <strong>数码家电</strong>
+            <span>生活服务，应有尽有</span>
+          </section>
+          <img src="./img/hydqicon1.png" alt="数码家电"/>
+        </a>
+      </div>
+      <div class="col pad0 flex18 w2">
+        <div class="row pad0 somposREL borderbtm">
+          <a href="#/mclassify/23/教育培训">
+            <section class="rightSection">
+              <strong>教育培训</strong>
+              <span>好方法成就好未来</span>
+            </section>
+            <img src="./img/hydqicon2.png" alt="教育培训"/>
+          </a>
+        </div>
+        <div class="row pad0 somposREL mag-t-0">
+          <a href="#/mclassify/22/文化体育">
+            <section class="rightSection">
+              <strong>文化体育</strong>
+              <span>运动一点通，生活更轻松</span>
+            </section>
+            <img src="./img/hydqicon3.png" alt="文化体育"/>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--金牌行业-->
+    <div class="jphy">
+      <h1 class="jphyTitle">金牌行业</h1>
+      <div class="clearfix"></div>
+      <ul class="bgfff">
+        <a ng-repeat="jphy in data.jphyList" ng-click="goItems(jphy.id)" href="javascript:;">{{jphy.name}}</a>
+      </ul>
+    </div>
+    <!--金融理财-->
+    <div ng-repeat="jphyView in data.jphyList" id="jphy{{jphyView.id}}" class="jrlc bgfff">
+      <a class="title" href="javascript:;" ng-click="goNext(jphyView.code,jphyView.name)">
+        <img class="lIcon" src="./img/jphyIcon.png" alt="金牌行业">
+        <span>{{jphyView.name}}</span>
+        <img class="rIcon" src="./img/leftgoBtn.png" alt="详情">
+      </a>
+      <ul>
+        <a ng-repeat="jphyItems in jphyView.children" href="#/Mlist/{{jphyItems.code}}/{{jphyView.name}}-{{jphyItems.name | SpritFilter}}">
+          {{jphyItems.name}}
+        </a>
+      </ul>
+    </div>
+    <!--金融理财其他-->
+    <div class="jrlc bgfff">
+      <a class="title" href="javascript:;">
+        <img class="lIcon" src="./img/jphyotherIcon.png" alt="其他行业">
+        <span>其他行业</span>
+      </a>
+      <ul>
+        <a ng-repeat="jphyotherView in data.jphyotherList" href="#/Mlist/{{jphyotherView.code}}/其他行业-{{jphyotherView.name | SpritFilter}}">
+          {{jphyotherView.name}}
+        </a>
+      </ul>
+    </div>
+  </ion-content>
+  <div ng-include="'./templates/common/footer.html'"></div>
+</ion-view>
