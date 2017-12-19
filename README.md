@@ -12,7 +12,10 @@ angularjs_ionic的按需加载
 
 相关资料的链接：
 使用ionic的解决方案（按需加载）
+
 前端构建工具gulpjs的使用介绍及技巧
+
 ionic开发环境配置，创建一个HelloWorld（针对初学者）
+
 
 两个有帮助的工具： Ionic助手 和 Ionic Lab
